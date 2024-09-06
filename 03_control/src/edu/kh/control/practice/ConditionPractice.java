@@ -113,7 +113,67 @@ public class ConditionPractice {
 		}
 		
 	
-	public void practice3() {}
+	public void practice3() {
+		
+		/*
+		 * 1부터 사용자에게 입력 받은 수까지의 정수들의 합을
+		 * 	for문을 이용하여 출력하세요.
+		 * (2월 윤달은 생각하지 않습니다.)
+		 * 잘못 입력한 경우 "00월은 잘못 입력된 달입니다."를 출력하세요.
+		 * (switch문 사용)
+		 *
+		 * 
+		 */
+		
+		/*
+		System.out.println("1 ~ 12 사이 정수 입력 : ");
+		int month = sc.nextInt();
+		
+		switch(month) {
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+			System.out.println(month + "월은 31일까지 있습니다");
+			break;
+		
+		case 4: case 6: case 9: case 11:
+			System.out.println(month + "월은 30일까지 있습니다");
+			break;
+			
+		case 2: 
+			System.out.println(month + "월은 28일까지 있습니다");
+			break;
+			
+			default: System.out.println(month + "월은 잘못 입력된 달입니다.");
+			
+		
+		}
+			
+			*/
+		
+		System.out.println("1 ~ 12 사이의 정수 값 입력 : ");
+		int month = sc.nextInt();
+		
+		switch(month) {
+		case 1 case 3 case 5 case 7 case 8 case 10 case 12
+			System.out.println(month + "월은 31일 까지 있습니다");
+			break;
+		
+		case 4 case 6 case 9 case 11 :
+			System.out.println(month + "월은 30일 까지 있습니다");
+			break;
+			
+		case 2 :
+			System.out.println(month + "월은 28일까지 있습니다");
+			break;
+			
+			default:System.out.println(month + "월은 잘못 입력된 달입니다. ");
+		}
+		
+		
+		
+		
+	}
+	
+	
 	public void practice4() {}
 	public void practice5() {}
 	

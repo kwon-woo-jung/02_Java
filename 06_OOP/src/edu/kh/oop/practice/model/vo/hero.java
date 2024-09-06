@@ -68,20 +68,44 @@ public class hero {
 		this.exp = exp;
 	}
 	
+	/*
+	 * 
+	 * 
+	 * 
+	 */
+	
 	// 기능
 	
 	// getter/setter
 	
-	public void attack(double exp) {
-		
-	}
 	
 	public void attack(double exp) {
+		this.exp += exp;
 		
+		System.out.printf("'%s' 은/는 공격을 했다 !!! 현재 경험치 : %.1f\n",
+					nickName, this.exp);
+		
+		if(this.exp >= 300 ) {
+			level += 1;
+			System.out.println("레벨이 올랐습니다!! 현재레벨 : " + level);
+		}
 	}
 	
 	public void dash() {
+		if(mp <= 0) {
+			System.out.println("[마력 무족]더 이상 대시 할 수 없어요~!");
+		} else {
+			mp -= 10; // mp = mp -10;
+			System.out.printf("'%s'의 엄청 빠른 대시!!! 남은 마력 : %d\n",
+							nickName, mp );
 		
+			
+		}
+		
+	}
+	
+	public String toString() {
+		return "===='%s'님의 정보====\n"
 	}
 }
 
