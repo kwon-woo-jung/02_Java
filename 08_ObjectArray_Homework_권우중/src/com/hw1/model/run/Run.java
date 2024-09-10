@@ -30,6 +30,9 @@ public class Run {
 
 	Scanner sc = new Sacnner(System.in);
 	
+	int count = 0;
+	
+	
 	
 	
 	
