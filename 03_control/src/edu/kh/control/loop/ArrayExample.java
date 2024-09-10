@@ -266,7 +266,7 @@ public class ArrayExample {
 			
 			Scanner sc = new Scanner(System.in);
 			System.out.print("과일 입력 : ");
-			string input = sc.next();
+			String input = sc.next();
 			
 			boolean flag = false;
 			

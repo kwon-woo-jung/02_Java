@@ -73,10 +73,23 @@ public class Memberservice {
 			case 2 : /*로그인*/ System.out.println( login() );
 			
 //			case 3 : /*조회*/ break;
-			case 3 : /*조회*/ break;
+			case 3 : System.out.println( selectMember() );
+			
+			break;
 			
 // 			case 4 : /*수정*/ break;
- 			case 4 : /*수정*/ break; 
+ 			case 4 : int resunt = updateMember(); // -1, 0, 1
+ 			
+ 					 if(result == -1) {
+ 						 System.out.println("로그인 후 이용바람");
+ 					 } else if(result == 0) {
+ 						 System.out.println("회원 정보 수정 실패(비밀번호 불일치)");
+ 					 } else {
+ 						 // result == 1
+ 						 System.out.println("회원 정보가 수정되었습니다");
+ 			
+ 			
+ 			break; 
  				
 //			case 5 : /*지역검색*/ break;
 			case 5 : searchRegion(); break;
@@ -367,10 +380,23 @@ public class Memberservice {
 		// 회원 정보 조회 메서드
 		public String slelctMember() {
 			
+			System.out.println("\n=====회원 정보 조회=====");
+			
 			// 1) 로그인 여부 확인
 			// 2) 로그인이 되어있는 경우
+			if(loginMember==null) {
+				return "로그인 후 이용바람";
+			}
+			
 			// 	  현재 로그인한 회원의 정보를 출력할 문자열을 만들어 반환
 			//    단, 비밀번호 제외 (이름, 아이디, 나이, 지역)
+			
+			String str = "이름 : " + loginMember.getMemberName();
+			str += "\n아이디 : " + loginMember.getMemberId();
+			str += "\n나이 : " + loginMember.getMemberAge();
+			str += "\n지역 : " + loginMember.getRegion();
+			
+			return str;
 			
 			// 이름 : 홍길동
 			// 아이디 : user01
@@ -378,25 +404,66 @@ public class Memberservice {
 			// 지역 : 서울
 			
 			
+			memberArr[0] = new Member("user01", "pass01", 20, "서울");
+			
+			public void displayMenu()
+			
+			
+			
+			/*
 //			System.out.println("\n====로그인=====");
 			System.out.println("\n====로그인=====");
 			
 //			System.out.print("아이디 입력 : ");
-			System.out.print("아이디 입력 : ");
 			
+			System.out.print("아이디 : ");
 			String memberId = sc.next();
 			
+			System.out.print("비밀번호 : ");
+			String memberPw = sc.next();
+			
+			System.out.print("비밀번호 확인 : ");
+			String memberPw2 = sc.next();
+			
+			System.out.print("이름 : ");
+			String memberName = sc.next();
+			
+			System.out.println("나이 : ");
+			int memberAge = sc.nextInt();
+			
+			System.out.print("지역 : ");
+			String region = sc.next();
 			
 			
+			
+			
+			for(int i = 0; i < memberArr.length; i++) {
+				
+				if(memberArr[i] == null) {
+					
+					break;
+				}
+				
+				
+				
+			}
+			
+			
+			
+			
+		}
+		*/
+		
+		
 			
 			
 			
 		}
 		
 		
-		
 		// 회원 정보 수정 메서드
 		public int updateMember() {
+
 			
 			// 1) 로그인 여부 판별
 			// -> 로그인이 되어있지 않으면 -1 반환
@@ -406,10 +473,25 @@ public class Memberservice {
 			
 			// 3) 비밀번호를 입력받아서
 			// 	  로그인한 회원의 비밀번호와 일치하는지 확인
+			System.out.print("비밀번호 입력 : ");
+			String inputPw = sc.next();
+			
+			
 			
 			// 4) 비밀번호가 같을 경우
 			// 로그인한 회원의 이름, 나이, 지역 정보를 입력 받은 값으로 변경 후
 			// 1 반환
+			if( inputPw.equals(loginMember.getMemberPw())) {
+				loginMember.setMemberName(inputName);
+				loginMember.setMemberAge(inputAge);
+				loginMember.setMemberAge(inputRegion);
+				
+				return 1;
+			} else {
+				
+				return 0;
+			}
+			
 			
 			// 5) 비밀번호가 다른 경우 0 반환
 			
@@ -422,7 +504,21 @@ public class Memberservice {
 		
 		
 		
-		
+		public class ProductController {
+
+
+			private Product[] pro = null;
+			public static int count = 0;
+
+			Scanner...
+
+			// 초기화블럭
+			// 객체 생성시 초기화블럭 수행 -> 생성자 수행
+			{
+				pro = new Product[10];
+			}
+
+		}
 		
 		
 		
