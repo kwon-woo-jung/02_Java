@@ -50,7 +50,7 @@ public class WhileExample {
 	
 	public void ex2() {
 		
-		// 입력되는 모든 정수의 합 구하기
+// 		입력되는 모든 정수의 합 구하기
 //			단, 0이 입력되면 반복 종료 후 결과 출력
 //		-> 0이 입력되지 않으면 계속 반복
 //		do ~ while 문
@@ -63,7 +63,7 @@ public class WhileExample {
 		 * } while(조건식);
 		 * 
 		 * 
-		 */
+		 * */
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -76,7 +76,7 @@ public class WhileExample {
 			
 			sum += input;
 			
-		} while(input != 0);
+		} while (input != 0);
 		
 		System.out.println("합계 : " + sum);
 		
@@ -88,31 +88,94 @@ public class WhileExample {
 	public void practice7() {
 		/*
 		 * 다음과 같은 실행 예제를 구현하세요.
+		 
+		 ex.
+		 정수 입력 : 4
 		 * 
-		 * ex.
-		 * 정수 입력 : 4
-		 * 
-		 * 
-		 * 
-		 * 
-		 * -행 (row)은 입력한 input만큼
-		 * -열 (col)은 현재행 (row)만 반복
+		 **
+		 ***
+		 ****
+		
+		 -행 (row)은 입력한 input만큼
+		 -열 (col)은 현재행 (row)만 반복
 		 */
+		
+		
 		 Scanner sc = new Scanner(System.in);
 		 
+		 System.out.println("정수 입력 : ");
+		 int input = sc.nextInt();
 		
-		
-		
+		 for(int row = 1; row <= input; row++) {
+			 
+			 for(int col = 1; col <=row; col++) {
+				 
+				 System.out.print("*");
+				 
+			 }
+			 
+			 System.out.println(); // 한 행의 모든 열 출력 끝나면 줄바꿈(다음행)
+			 
+		 }
 		
 		
 		}
 	
 	
-	
 	public void practice8() {
+		/* 다음과 같은 실행 예제를 구현하세요.
+		 
+		 ex.
+		 정수 입력 : 4
+		 ****
+		 *** 
+		 ** 
+		 *
+		  
+		  - 행(row)은 입력한 input 만큼 반복
+		  (단, 안쪽 for문을 생각해서 1씩 감소하는 형태로 작성.)
+		  -열(col)은 1부터 현재행(row) 범위만큼 반복
+		  
+		  
+		 */
 		
+		 Scanner sc = new Scanner(System.in);
+		 
+		 System.out.print("정수 입력 : ");
+		 int input = sc.nextInt();
+		 
+		 for(int row = input; row >= 1; row--) {
+			 // 내가 입력한 input 값을 row에 대입하여 반복할때마다 1씩 감소
+			 // 4 3 2 1..
+			 
+			 for(int col = 1; col <= row; col++ ) {
+				 System.out.print("*");
+			 }
+			 
+			 System.out.println();
+			 
+		 }
 		
 	}
+	
+	
+	public void practice 9
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
