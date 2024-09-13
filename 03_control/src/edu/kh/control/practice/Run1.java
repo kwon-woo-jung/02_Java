@@ -8,7 +8,7 @@ public class Run1 {
 		ConditionPractice cp = new ConditionPractice();
 		cp.practice1();
 		
-		condition.ex1();
+//		condition.ex1();
 //		condition.ex2();
 //		condition.ex3();
 //		condition.ex4();

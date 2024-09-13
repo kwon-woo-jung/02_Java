@@ -159,11 +159,178 @@ public class WhileExample {
 	}
 	
 	
-	public void practice 9
+	public void practice9() {
+		
+		/*
+		 
+		 정수 입력 : 4
+		  
+		  
+		 *
+		** 
+	   *** 
+	  ****
+	  
+	 - 공백 부분이 input 보다 1 작은수에서 시작하여
+	   1씩 감소하는것 처럼 보임
+	 
+	 - * 부분은 현재행(row)만큼 찍힌것으로 보임
+	 
+	  * */
+		
+	Scanner sc = new Scanner(System.in);
+	
+	System.out.println("정수 입력 : ");
+	int input = sc.nextInt();
+	
+	for(int row=1; row <= input; row++) {
+		
+		// 공백 부분 입력할 for문
+		for(int i = input-1; i >= row; i--) {
+			System.out.print(" ");      
+		}
+		
+		
+		
+		
+		// 현재 row만큼 반복하여 * 출력해줄 for문
+		for(int col = 1; col <= row; col++) {
+			System.out.print("*");
+		}
+		
+		System.out.println("*");
+		
+	}
 	
 	
 	
 	
+	
+	
+	
+	
+	
+	}
+	
+	public void practice10() {
+		
+		/*
+		  
+		 정수 입력 : 3
+		 
+		 *
+		 **
+		 *** (여기까지 위쪽삼각형)
+		 **
+		 *
+		  
+		  -위쪽삼각형 : 행(row)은 input 만큼 반복, 열(col)은 현재행(row)만큼 반복
+		  -아래삼각형 : 행(row)은 input보다 1작은수에서부터 1씩 감소하며 반복
+		  		열(col)은 현재행(row)만큼 반복
+		  		
+		 두개 합치기!
+		 
+		 * */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+		// 위쪽삼각형
+		for(int row = 1; row<= input; row++) {
+			
+			for(int col = 1; col <= row; col++) {
+				System.out.print("*");
+			}
+			
+			System.out.println(); // 줄바꿈
+		}
+		
+		
+		// 아랫쪽삼각형
+		for(int row = input - 1; row >= 1; row--) {
+			for(int col = 1; col <= row; col++) {
+				System.out.println("*");
+			}
+			
+			System.out.println(); // 줄바꿈
+		}
+	
+		
+		
+	}
+	
+	public void practice11() {
+		
+		/*
+		  
+		 정수 입력 : 4 // 왼쪽에서부터 공백 포함
+		  *       // input(4) + row(1) - 1 == 4 -> 한 행에 열(col)이 4번 반복하여 공백이나 * 찍음
+		 ***	  // input(4) + row(2) - 1 == 5 -> 한 행에 열(col)이 5번
+	    *****	  // input(4) + row(3) - 1 == 6 -> 한 행에 열(col)이 6번
+	   *******	  // input(4) + row(4) - 1 == 7 -> 한 행에 열(col)이 7번
+	   
+	   
+	   - " " 규칙 : input - row 값이 col 이상일 때 
+	   - "*" 규칙 : col이 더 클 때
+	   
+	  	(1행 : 공백규칙 -> input(4) - row(1) == 3 >= col(1,2,3,4)
+		 		col이 4 일 때 false으므로 * 찍힘
+		 		
+		 (2행 : input(4) - row(2) ==> 2 >= col(1,2,3,4,5)
+		 		col이 3,4,5 일때 false 이므로 * 찍힘
+		 		
+		 (3행 : input(4) - row(3) ==> 1 >= col(1,2,3,4,5,6)		
+		 		col이 2,3,4,5,6 일때 false 이므로 * 찍힘
+		 		
+		 (4행 : input(4) - row(4) ==> 0 >= col(1,2,3,4,5,6,7)
+		 		col이 1,2,3,4,5,6,7 일때 false 이므로 * 찍힘(공백찍힐일 없음)
+		* */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt(); // 4일떄
+		
+		// 1부터 시작해서 input 까지 1씩 증가
+		for(int row = 1; row <= input; row++) {
+			
+			for(int col = 1; col <= input + row -1; col++) {
+				// [1-1턴] 	1 <= (4 + 1 - 1) 4
+				// [1-2턴] 	2 <= 4
+				// [1-3턴] 	3 <= 4
+				// [1-4턴] 	4 <= 4
+				
+				if(input-row >= col) { // 공백 조건
+			// [1-1턴] (4 - 1) 3 >= 1 (true) " " 출력
+			// [1-2턴]         3 >= 2 (true) " " 출력
+			// [1-2턴]         3 >= 3 (true) " " 출력
+			// [1-2턴]         3 >= 4 (false) "*" 출력
+					System.out.print(" ");
+					
+				} else { // * 조건
+					System.out.print("*");
+				}
+				
+			}
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	public void practice12() {
+		
+	}
 	
 	
 	
