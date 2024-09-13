@@ -1,6 +1,8 @@
 package edu.kh.collection.pack1.model.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -131,16 +133,34 @@ public class StudentService {
 				System.out.println(); 
 				
 				switch(menuNum) {
-				case 1 : System.out.println( addStudent() ); break;
-				case 2 : selectAll break;
-				case 3 : System.out.println( updateStudent() ); break;
-				case 4 : /*학생 정보 삭제*/ break;
-				case 5 : /*이름으로 검색 (일치)*/ break;
-				case 6 : /*이름으로 검색(포함)*/ break;
-				case 7 : /*나이순 정렬*/ break;
-				case 8 : /*이름순 정렬*/ break;
+				case 1 :
+					System.out.println( addStudent() ); break;
+				
+				case 2 :
+					selectAll break;
+				
+				case 3 :
+					System.out.println( updateStudent() ); break;
+				
+				case 4 :
+					System.out.println( removeStudent() );break;
+				
+				case 5 :
+					/*이름으로 검색 (일치)*/ break;
+				
+				case 6 :
+					/*이름으로 검색(포함)*/ break;
+				
+				case 7 :
+					srotByAge(); break;
+				case 8 :
+					/*이름순 정렬*/ break;
+					sortByName();
+					
 				case 0 : System.out.println("프로그램 종료.."); break;
+				
 				default : System.out.println("메뉴에 작성된 번호만 입력하세요!");
+				
 				}
 				
 			} catch(InputMismatchException e) {
@@ -284,40 +304,140 @@ public void selectAll() {
 			
 			// 4) 만약 문자열을 입력한 경우 -> 예외처리 throws	
 		} else {
-			// 수정 코드 작성
+			// 학생 정보 제거
 			
-			System.out.println(index + "번째에 저장된 학생 정보");
-			System.out.println( studentList.get(index) );
+			System.out.println("정말 삭제 하시겠습니까? (Y/N) : ");
+			char ch = sc.next().toUpperCase().charAt(0);
+			// 		string 대문자 -> 대문자 0번 인덱스 문자
+			//      "n" -> "N" -> 'N'
 			
-			System.out.print("이름 : ");
-			String name = sc.next();
+			// String.toUpperCase() : 문자열을 대문자로 변경
+			// String.toLowerCase() : 문자열을 소문자로 변경
 			
-			System.out.println("나이 : ");
-			int age = sc.nextInt();
-			sc.nextLine(); // 입력 버퍼 개행 문자 제거용
-			
-			System.out.println("사는 곳 : ");
-			String region = sc.nextLine();
-			
-			System.out.print("성별(M/F) : ");
-			char gender = sc.next().charAt(0); // 'M' or 'F'
-			
-			System.out.print("점수 : ");
-			int score = sc.nextInt();
-			
-			// 입력받은 index번째에 수정할 학생정보 세팅 -> 수정
-			// index 번째에 있던 기존 학생 정보가 반환되고, 그 객체를 temp 에 저장
-			Student temp = studentList.set(index, new Student(name, age, region, gender, score));
-			
-			return temp.getName() + "의 정보가 변경되었습니다";
+			if(ch == 'Y') {
+				Student temp = studentList.remove(index);
+				return temp.getName() + "의 정보가 제거되었습니다";
+				
+			} else {
+				return "취소";
+			}
 			
 			
-		}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		
-		return "";
+		}
+	
+
 	}
 	
 	
+	/**
+	 * 이름이 일치하는 학생을 찾아서 조회하는 메서드 (완전 일치)
+	 * 검색할 이름 입력받아 studentList에서 꺼내온 Student 객체의 name 값이 같은지 비교
+	 * - 일치하는 경우 Student 객체 출력
+	 * - 검색 결과가 없습니다 출력
+	 */
+	public void searchName1() {
+		System.out.println("===학생 검색(이름 부분 포함)===");
+		
+		System.out.print("이름에 포함되는 문자열 입력 : ");
+		String input = sc.next();
+		
+		boolean flag = true;
+		
+		// 향상된 for문
+		for(Student std : studentList) {
+			// 순서 유의!
+			// boolean String.contains(문자열) : String에 문자열이 포함되어있으면 true / 없으면 false
+			if( std.getName().contains(input) ) { // 이름이 일치하는 경우
+				System.out.println( std ); // std.toString();
+				
+				flag = false;
+				
+			}
+		}
+		
+		if(flag) {
+			System.out.println("검색 결과가 없습니다.");
+		}
+		
+	}
+	
+	
+	
+	/**
+	 * 나이에 따라 오름차순 정렬
+	 */
+	
+	public void sortByAge() {
+		
+		// Student에 Comparable 인터페이스를 상속받아 오버라이딩한
+		// compareTo() 에 정의한대로 정렬됨(오름차순, 내림차순)
+		Collections.sort(studentList);
+	
+		// 정렬된 결과 출력
+		for(Student std : studentList) {
+			System.out.println(std);
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * 이름에 특정 문자열이 포함되는 학생을 찾아서 조회하는 메서드
+	 * 문자열 입력받아 studentList에서 꺼내온 Student 객체의 name값에 포함되는 문자열인지 검사
+	 * - 포함되는 경우 Student 객체 출력
+	 * - 검색 결과가 없습니다 출력
+	 * 
+	 */
+	
+	public void searchName2() {
+		
+		Comparator<Student> nameComparator = Comparator.comparing(Student::getName);
+		//Comparator<Student> nameComparator = Comparator.comparing(Student::getName);
+		// camparing() 는 기본적으로 오름차순
+		// -> 내림차순 원하면 reversed(); 사용
+		
+		// Comparator 인터페이스의 static 메서드인
+		// comparing() 을 사용하여 Comparator 객체를 생성
+		// -> comparing() 는 주어진 키를 기반으로 객체를 비교함.
+		// Student::getName -> 메서드 레퍼런스(Method Reference)
+		// Student 클래스의 getName() 메서드를 가리키는 것.
+		// -> 이 메서드를 비교의 키로 사용하여 각 Student 객체를 비교하고 정렬함.
+		// --> Comparator.comparing(Student::getName) 은 Student::getName) 은 Student 객체의 이름(name)을
+		//	  기준으로 학생객체를 비교하는 Comparator 객체를 생성.
+		
+		// 이름에 따라 정렬
+		Collections.sort(studentList, nameComparator);
+		
+		for(Student std : studentList) {
+			System.out.println(std);
+		}
+		
+	}
 	
 	
 	
