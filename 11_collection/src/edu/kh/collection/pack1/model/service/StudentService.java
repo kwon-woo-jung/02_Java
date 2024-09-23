@@ -8,15 +8,6 @@ import java.util.Scanner;
 
 import edu.kh.collection.pack1.model.dto.Student;
 
-/**
- * 
- */
-/**
- * 
- */
-/**
- * 
- */
 public class StudentService {
 
 	// java.util.List 인터페이스 : List에 반드시 필요한 필수 기능을 모아둔 인터페이스
@@ -34,7 +25,7 @@ public class StudentService {
 	
 	private Scanner sc = new Scanner(System.in);
 	
-//	private List<Object> testList = new ArrayList<Object>();
+	// private List<Object> testList = new ArrayList<Object>();
 	
 	// 학생 정보를 저장할 List 생성
 	private List<Student> studentList = new ArrayList<Student>(); // 검색(조회) 효율적

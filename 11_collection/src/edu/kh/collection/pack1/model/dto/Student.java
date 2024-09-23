@@ -1,6 +1,6 @@
 package edu.kh.collection.pack1.model.dto;
 
-public class Student implements Comparable<Student>{
+public class Student implements Comparable<Student> {
 	// 필드
 	
 	private String name; // 이름
