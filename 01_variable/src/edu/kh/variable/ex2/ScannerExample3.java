@@ -9,7 +9,7 @@ public class ScannerExample3 {
 		// 문자열 (String) 입력
 		// 문자열을 3번 입력받아 한줄로 출력하기
 		
-		// ex)
+		// ex) 
 		// 입력 1 : 안녕?
 		// 입력 2 : 반가워
 		// 입력 3 : 점심뭐먹지?
@@ -24,15 +24,28 @@ public class ScannerExample3 {
 		// 공백과 함께 입력된 모든 내용을 반환
 		
 		System.out.print("입력 1 : ");
-		string input1 = sc.nextLine();
+		String input1 = sc.nextLine();
 		
 		System.out.print("입력 2 : ");
-		string input2 = sc.nextLine();
+		String input2 = sc.nextLine();
 		
 		System.out.print("입력 3 : ");
-		string input3 = sc.nextLine();
+		String input3 = sc.nextLine();
 		
-		System.out.printf("%s %s %s|n", input1, input2, input3);
+		System.out.printf("%s %s %s\n", input1, input2, input3);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
+	
 }

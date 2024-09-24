@@ -1,10 +1,10 @@
 package edu.kh.variable.ex2;
 
-// ctrl + shift + o : 파일에서 import 되지 않은 클래스 모두 import 단축키
 import java.util.Scanner;
 
-public class ScannerExample2 {
+// ctrl + shift + o : 파일에서 import 되지 않은 클래스 모두 import 단축키
 
+public class ScannerExample2 {
 	
 	public static void main(String[] args) {
 		
@@ -14,7 +14,7 @@ public class ScannerExample2 {
 		
 		// 입력받아 : Scanner 필요
 		
-		Sacnner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		
 		// 정수 : sc.nextInt();
 		// 실수 : sc.nextDouble();
@@ -22,14 +22,16 @@ public class ScannerExample2 {
 		System.out.print("실수 1 입력 : ");
 		double input1 = sc.nextDouble();
 		
-		System.out.println("실수 2 입력 : ");
+		System.out.print("실수 2 입력 : ");
 		double input2 = sc.nextDouble();
 		
 		// + , - , * , /
 		
-		System.out.println("%.2f + %.2f = %.2f|n", input1, input2, input1 + input2);
-		System.out.println("%.2f - %.2f = %.2f|n", input1, input2, input1 - input2);
-		System.out.println("%.2f * %.2f = %.2f|n", input1, input2, input1 * input2);
-		System.out.println("%.2f / %.2f = %.2f|n", input1, input2, input1 / input2);
+		System.out.printf("%.2f + %.2f = %.2f\n", input1, input2, input1 + input2);
+		System.out.printf("%.2f - %.2f = %.2f\n", input1, input2, input1 - input2);
+		System.out.printf("%.2f * %.2f = %.2f\n", input1, input2, input1 * input2);
+		System.out.printf("%.2f / %.2f = %.2f\n", input1, input2, input1 / input2);
+		
+		
 	}
 }
