@@ -25,7 +25,9 @@ public class Member { // 속성 + 기능
 	*/
 	
 	public Member(String memberId, String memberPw, String memberName, int memberAge) {
-		// 오버로딩 적용(매개변수의 개수 다름)
+		// 오버로딩 적용(매개변수의 개수 다름) -> 같은 이름의 메서드를 만들어주는 것
+		// -> 1. 메서드명이 같아야한다
+		// -> 2. 매개변수의 순서,개수,타입 중 1달라야한다
 		
 		// 매개변수로 전달받은값을 필드에 대입 과정
 		this.memberId = memberId;

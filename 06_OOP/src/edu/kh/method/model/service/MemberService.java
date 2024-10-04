@@ -223,10 +223,12 @@ public class MemberService {
 			
 		}
 		
-		
-		
-		
+			
+			
 	}
+		
+		
+	
 	
 	
 	
