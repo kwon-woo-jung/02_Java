@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import edu.kh.collection.pack3.model.dto.Member;
 
 public class MapService {
@@ -30,7 +29,7 @@ public class MapService {
 		
 		
 		// key 중복 테스트
-		map.put(1, "홍홍홍"); // 중복 허용 X, 대신 Value 덮어쓰기
+		map.put(1, "홍홍홍"); // Key를 중복 허용 X, 대신 Value 덮어쓰기
 		
 		// value 중복 테스트
 		map.put(7, "최길동");
@@ -41,7 +40,22 @@ public class MapService {
 		
 		
 		
+		
+		
+		
 	}
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+
+	
 	
 	
 	public void ex2() {

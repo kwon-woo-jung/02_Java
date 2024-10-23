@@ -192,15 +192,21 @@ public class SetService {
 		System.out.println("p2 : " + p2.hashCode());
 		System.out.println("p3 : " + p3.hashCode());
 		System.out.println("p4 : " + p4.hashCode());
+//		p1과 p2는 필드 값이 같다 그래서 hashCode()가 필드를 기준으로 오버라이딩되어 있다면, 두 객체의 해시코드는 동일하게 나옵니다.
+//		p3와 p4는 필드 값이 다르므로 서로 다른 해시코드를 가집니다.
 		
 		// A.equals(B) : A와 B가 가지고있는 필드값이 같다면 true
 		System.out.println( p1.equals(p2) );
 		System.out.println( p1.equals(p3) );
+//		p1.equals(p2)는 **같은 필드 값을 가지므로 true** 가 반환됩니다
+//		p1.equals(p3)는 **나이가 다르기 때문에 false**가 반환됩니다
+		
 		
 		// **********************************************
 		// Hash 라는 단어가 포함된 컬렉션 이용 시
 		// hashCode(), equals() 오버라이딩 필수적으로 진행해야 한다!!!!!!
 		// **********************************************
+		
 		
 		
 	}

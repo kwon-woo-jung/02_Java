@@ -42,15 +42,16 @@ public class Member {
 	}
 	
 	
-
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", pw=" + pw + ", age=" + age + "]";
+//		toString
 	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(age, id, pw);
+//		hashCode
 	}
 
 	@Override
@@ -63,6 +64,7 @@ public class Member {
 			return false;
 		Member other = (Member) obj;
 		return age == other.age && Objects.equals(id, other.id) && Objects.equals(pw, other.pw);
+//		equals
 	}
 	
 	
