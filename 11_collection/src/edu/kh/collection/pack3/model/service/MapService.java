@@ -47,17 +47,6 @@ public class MapService {
 	
 	
 	
-		
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
 	public void ex2() {
 		// Map 사용 예제
 		
