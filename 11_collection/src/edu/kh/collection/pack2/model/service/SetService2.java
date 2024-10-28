@@ -27,7 +27,7 @@ public class SetService2 {
 		Set<String> set = new HashSet<String>();
 //		set과 HashSet을 import 해준 다음 제네릭에 <String>을 해줘서 Set과 HashSet에 String 값을 넣어줬다
 //		HashSet은 객체들을 순서없이 저장하고 동일한 객체는 중복 저장하지 않는다
-//		HashSt은 객체를 저장하기 전에 먼저 객체의 hashCode() 메소드를 호출해서 해시코드를 얻어낸ㄷ다
+//		HashSet은 객체를 저장하기 전에 먼저 객체의 hashCode() 메소드를 호출해서 해시코드를 얻어낸다
 //		즉 new HashSet<>(); 으로 객체 선언 해준것이다
 		
 		set.add("네이버");

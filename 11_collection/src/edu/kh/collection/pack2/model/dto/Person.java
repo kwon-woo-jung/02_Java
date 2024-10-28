@@ -5,15 +5,15 @@ import java.util.Objects;
 public class Person {
 //	Person 클래스를 만들어 준다 
 	
-	private String name;
-	private int age;
-	private char gender;
+	private String name; // 이름
+	private int age; // 나이
+	private char gender; // 성별
 //	
 	
-	public Person() {}
+	public Person() {} 
 //	기본 생성자 역할은 클래스가 인스턴스화될 때 호출 되어 객채 초기 상태를 설정 하는 것이다. 인스턴스화는 객체가 만들어 질떄를 뜻함
 
-	public Person(String name, int age, char gender) {
+	public Person(String name, int age, char gender) { // alt shif o
 		super();
 		this.name = name;
 		this.age = age;
@@ -81,11 +81,14 @@ public class Person {
 		// hashcode : 객체별 식별 코드
 		return Objects.hash(age, gender, name);
 	}
+
 //	hashCode()란? hashCode() 메서드는 객체를 식별할 수 있는 고유한 정수를 반환함
 //	HashSet, HashMap, HashTable 등의 컬렉션에서 객체를 관리할 때 객체를 빠르게 찾기 위해서 hashCode()를 사용한다
 	
 //	hashCode()를 오버라이딩 할땐 객체의 필드 값을 이용해 고유한 식별자를 만들어 낸다 이 예시에서는 Objects.hash() 메서드를 사용하여
 //	age, gender, name 필드 값을 기반으로 해시 코드를 생성한다
+	
+	
 	
 	// 동등 비교 : Object.equals() 메서드 오버라이딩
 	
@@ -117,7 +120,7 @@ public class Person {
 }*/
 //	equals() 오버라이딩: 객체의 필드 값을 비교하여 논리적으로 동일한 객체인지 확인함	
 	
-
+	
 	
 	
 	

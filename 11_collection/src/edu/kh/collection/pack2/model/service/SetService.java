@@ -82,8 +82,8 @@ public class SetService {
 		
 		// 4. boolean contains(E e) :
 		//  전달받은 e가 Set에 있으면 true, 없으면 false
-		System.out.println("쿠팡 있는지 검사 : " + set.contains("쿠팡"));
-		System.out.println("삼성 있는지 검사 : " + set.contains("삼성"));
+		System.out.println("쿠팡 있는지 검사 : " + set.contains("쿠팡")); // true
+		System.out.println("삼성 있는지 검사 : " + set.contains("삼성")); // false
 		
 		// 5. void clear() : Set에 저장된 내용을 모두 삭제
 		set.clear();
@@ -121,6 +121,7 @@ public class SetService {
 		// Iterator Set.iterator() : 
 		// - 현재 Set을 순차 접근할 수 있는 Iterator 객체 반환
 		Iterator<String> it = set.iterator();
+//		Iterator 객체를 이용해서 Set의 요소들을 하나씩 꺼내서 출력할 예정
 		
 		System.out.println("[Iterator]");
 		
@@ -128,6 +129,7 @@ public class SetService {
 		// 다음 순차 접근할 요소가 있으면 true, 없으면 false
 		while(it.hasNext()) {
 			// 다음 요소가 있으면 반복, 없으면 멈춤
+//			hasNext()로 다음 요소가 있는지 확인하고 next()로 요소를 가져옴
 			
 			// E Iterator.next() : 다음 요소를 꺼내와 반환
 			String temp = it.next();
@@ -172,7 +174,7 @@ public class SetService {
 		Person p4 = new Person("김길순", 20, '여');
 		
 		// Set 객체 생성 후 p1 ~ p4 추가
-		Set<Person> personSet = new HashSet<Person>();
+		Set<Person> personSet = new HashSet<Person>(); // HashSet 만들것이고 Set 객체 생성 할 예정
 		personSet.add(p1);
 		personSet.add(p2);
 		personSet.add(p3);
@@ -180,9 +182,15 @@ public class SetService {
 		
 		System.out.println("------------------------");
 		
-		for(Person p : personSet) {
-			System.out.println(p);
+		for(Person p : personSet) { // p라고 부를 것이다 
+			System.out.println(p); // 프린트 구문에서 p 입력할것임 toString
 		}
+//		for-each 문을 사용하여 Set에 저장된 객체 정보를 출력합니다.
+//		p1과 p2는 같은 객체로 간주되어 중복 삽입되지 않으므로 출력 결과에 한 번만 나타납니다.
+		
+//		hashCode() 및 equals() 오버라이딩
+//		**hashCode()** 와 equals() 메서드는 Person 클래스에서 필드 값이 동일한 객체를 동일하게 간주하기 위해 오버라이딩되어야 합니다.
+		
 		
 		System.out.println("------------------------");
 		
@@ -202,10 +210,11 @@ public class SetService {
 //		p1.equals(p3)는 **나이가 다르기 때문에 false**가 반환됩니다
 		
 		
-		// **********************************************
+		
+		// ****************************************************
 		// Hash 라는 단어가 포함된 컬렉션 이용 시
 		// hashCode(), equals() 오버라이딩 필수적으로 진행해야 한다!!!!!!
-		// **********************************************
+		// ****************************************************
 		
 		
 		
@@ -228,14 +237,14 @@ public class SetService {
 		
 		// Integer를 저장할 TreeSet 객체 생성
 		// Integer(객체, Wrapper class) <==> int (기본자료형)
-		Set<Integer> lotto = new TreeSet<Integer>();
+		Set<Integer> lotto = new TreeSet<Integer>(); // 중복을 허용하지 않고 자동으로 정렬되므로 로또 번호 생성에 적합합니다.
 		
 		// lotto에 저장된 값이 6개 미만이면 반복
 		// == 6개 멈춤
 		while(lotto.size() < 6) {
 			
-			// random.nextInt(45) : 0 <= x < 45 난수 
-			  lotto.add( random.nextInt(45) + 1 );  // 1 ~ 45
+			// random.nextInt(45) : 0 <= x < 45 난수
+			lotto.add( random.nextInt(45) + 1 ); // 1 ~ 45
 		}
 		
 		System.out.println( lotto );
@@ -257,7 +266,8 @@ public class SetService {
 	 * </pre>
 	 * 
 	 */
-	public void lottoNumberGenerator() {
+	
+	public void lottoNumberGenerator() {	
 		
 		// 스캐너 필요!
 		Scanner sc = new Scanner(System.in);
@@ -267,13 +277,13 @@ public class SetService {
 		
 		Random random = new Random();
 		
-		// 생성된 로또 번호 묶음(TreeSet)을 저장할 List
+		
+//		생성된 로또 번호 묶음(TreeSet)을 저장할 List
 		List<Set<Integer>> lottoList = new ArrayList<Set<Integer>>();
 		
 		// for문 반복될 때 마다 새로운 TreeSet 객체 생성
-		for( int i = 0; i < amount/1000; i++ ) {
-			
-			Set<Integer> lotto = new TreeSet<Integer>();
+		for(int i = 0; i < amount / 1000; i++ ) { // amount / 1000 만큼의 회차가 생성됩니다. 즉, 입력한 금액이 천 원당 한 번씩 로또 번호가 생성됩니다
+			Set<Integer> lotto = new TreeSet<Integer>(); // TreeSet을 사용하여 중복 번호를 방지하고 자동 정렬을 통해 번호를 오름차순으로 출력합니
 			
 			while(lotto.size() < 6) {
 				lotto.add( random.nextInt(45) + 1 ); // 1 ~ 45 사이 난수 발생
@@ -289,18 +299,6 @@ public class SetService {
 		}
 		
 		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
