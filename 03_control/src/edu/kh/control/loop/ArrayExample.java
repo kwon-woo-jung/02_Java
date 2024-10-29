@@ -316,13 +316,10 @@ public class ArrayExample {
 //				        01234	
 						
 				// 4 ) count (숫자세기)
-
-				
-				
-				
-				
+	
 			}
 		
+			
 			
 	}
 	

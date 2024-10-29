@@ -17,5 +17,6 @@ public class StudentGradeSystem {
 	studentList.add("김영희");
 	
 	Scanner scanner = new Scanner(System.in);
+	System.out.pring
 	
 }

@@ -104,6 +104,7 @@ public class SetService {
 	 * 3. 향상된 for문 이용
 	 * 
 	 */
+	
 	public void method2() { 
 		
 		Set<String> set = new HashSet<String>();
@@ -241,7 +242,7 @@ public class SetService {
 		
 		// lotto에 저장된 값이 6개 미만이면 반복
 		// == 6개 멈춤
-		while(lotto.size() < 6) {
+		while(lotto.size() < 6) { // while 문을 통해 TreeSet의 크기가 6이 될 때까지 난수를 추가합니다. 즉 6개의 번호가 모두 채워질 때까지 반복됩니다.
 			
 			// random.nextInt(45) : 0 <= x < 45 난수
 			lotto.add( random.nextInt(45) + 1 ); // 1 ~ 45
@@ -267,7 +268,10 @@ public class SetService {
 	 * 
 	 */
 	
-	public void lottoNumberGenerator() {	
+	public void lottoNumberGenerator() { // 입력된 금액을 기준으로 천 원당 하나의 로또 번호 세트를 생성합니다.
+//		Scanner로 금액을 입력받고 천 원당 로또 한 세트를 생성합니다.
+//		for문을 통해 amount / 1000 만큼 반복하여, 각 회차마다 TreeSet을 사용해 로또 번호를 생성합니다.
+		// 생성된 로또 번호 세트(TreeSet)를 List에 저장하고, 마지막에 전체 로또 번호 세트를 출력합니다.
 		
 		// 스캐너 필요!
 		Scanner sc = new Scanner(System.in);
@@ -294,9 +298,20 @@ public class SetService {
 		}
 		
 		// 출력용 반복문
-		for(int i = 0; i < lottoList.size(); i++) {
+		for(int i = 0; i < lottoList.size(); i++) { // for 문을 통해 입력한 금액에 따라 여러 개의 TreeSet을 lottoList에 추가합니다.
 			System.out.println( (i+1) + "회 : " + lottoList.get(i) );
 		}
+		
+//		lottoList.size(); 는 List에 저장된 로또 세트의 개수와 같습니다. 예를 들어, 3000원을 입력했다면 lottoList.size()는 3이 됩니다.
+//		출력 형식: (i + 1) + "회 : " + lottoList.get(i)로 각 세트에 대해 회차와 로또 번호를 출력합니다. i + 1을 사용해 1부터 시작하는 회차 번호를 출력합니다.
+//		로또 번호 출력: lottoList.get(i)는 TreeSet 타입의 로또 번호 세트로, 자동으로 오름차순 정렬된 중복 없는 로또 번호가 출력됩니다.
+		
+		// 로또 번호 세트 출력 
+		
+		
+//		이 for문은 lottoList에 저장된 각 로또 세트를 순서대로 출력하며, 각 회차 번호와 함께 오름차순으로 정렬된 번호를 출력하는 역할을 합니다.
+		
+		
 		
 		
 	}
